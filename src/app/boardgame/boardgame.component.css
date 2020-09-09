@@ -1,5 +1,6 @@
 .container{
     margin: auto;
+    height: 50%;
     width: 50%;
     padding: 10px;
 }
@@ -15,4 +16,10 @@
     content: "";
     display: block;
     padding-bottom: 100%;
+}
+
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }

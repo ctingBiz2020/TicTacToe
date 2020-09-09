@@ -12,4 +12,8 @@ export class BoardgameComponent implements OnInit {
   ngOnInit(): void {
   }
 
+
+  createBlockX() {
+    console.log("Cell One is clicked")
+  }
 }
