@@ -1,19 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 
+import { MarkingService } from 'src/app/marking.service';
+
 @Component({
   selector: 'app-boardgame',
   templateUrl: './boardgame.component.html',
-  styleUrls: ['./boardgame.component.css']
+  styleUrls: ['./boardgame.component.css'],
+  providers: [MarkingService]
 })
 export class BoardgameComponent implements OnInit {
 
-  constructor() { }
+  constructor(private markingService: MarkingService) { }
 
   ngOnInit(): void {
   }
 
-
-  createBlockX() {
-    console.log("Cell One is clicked")
+  markBlock(event: MouseEvent) {
+    console.log(event.srcElement)
+    this.markingService.addNewElement();
   }
 }
