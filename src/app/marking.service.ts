@@ -6,13 +6,10 @@ import { Injectable } from '@angular/core';
 export class MarkingService {
 
   // Create a new element
-  addNewElement(){
-    let xMarker = document.createElement("img");
-    xMarker.src = "xMarker.png";
-    xMarker.width = 50;
-    xMarker.height = 50;
-    xMarker.alt = "image.";
-    document.getElementById('content').appendChild(xMarker);
+  addNewElement(selectedId:string){
+    let xMarker = document.createElement("span");
+    xMarker.innerText = "X"
+    document.getElementById(selectedId).appendChild(xMarker);
   }
 
 }
