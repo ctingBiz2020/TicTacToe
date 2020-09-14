@@ -4,12 +4,17 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class MarkingService {
-
+ 
   // Create a new element
-  addNewElement(selectedId:string){
-    let xMarker = document.createElement("span");
-    xMarker.innerText = "X"
-    document.getElementById(selectedId).appendChild(xMarker);
+  addNewElement(selectedId:string){   
+    let addMarker = document.createTextNode('X');
+    document.getElementById(selectedId).appendChild(addMarker);
+  }
+
+  // Remove Element
+  removeElement(selectedId: string){
+    let removeMarker = document.createTextNode('X');
+    document.getElementById(selectedId).removeChild(removeMarker);
   }
 
 }

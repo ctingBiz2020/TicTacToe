@@ -1,20 +1,26 @@
 <div class="container">
     <div class="row">
-      <div class="cell" id="cell_one" (click)="markBlock()">
-      </div>
-      <div class="cell" id="cell_two" (click)="markBlock()">
-      </div>
-      <div class="cell" id="cell_three" (click)="markBlock()">
-      </div>
+      <div #cell class="cell" >
+        <div class="content" id="cell_one" (click)="markBlock($event)"></div></div>
+      <div #cell class="cell">
+        <div class="content" id="cell_two" (click)="markBlock($event)"></div></div>
+      <div #cell class="cell" >
+        <div class="content" id="cell_three" (click)="markBlock($event)"></div></div>
     </div>
     <div class="row">
-      <div class="cell" id="cell_four" ></div>
-      <div class="cell" id="cell_five" ></div>
-      <div class="cell" id="cell_six" ></div>
+      <div #cell class="cell"  >
+        <div class="content" id="cell_four" (click)="markBlock($event)"></div></div>
+      <div #cell class="cell"  >
+        <div class="content" id="cell_five" (click)="markBlock($event)"></div></div>
+      <div #cell class="cell"  >
+        <div class="content" id="cell_six" (click)="markBlock($event)"></div></div>
     </div>
     <div class="row">
-        <div class="cell"id="cell_seven" ></div>
-        <div class="cell"id="cell_eight" ></div>
-        <div class="cell"id="cell_nine" ></div>
-    </div>    
+      <div #cell class="cell"  >
+        <div class="content" id="cell_seven" (click)="markBlock($event)"></div></div>
+      <div #cell class="cell"  >
+        <div class="content" id="cell_eight" (click)="markBlock($event)"></div></div>
+      <div #cell class="cell"  >
+        <div class="content" id="cell_nine" (click)="markBlock($event)"></div></div>
+  </div>    
 </div>

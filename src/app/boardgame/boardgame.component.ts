@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 
 import { MarkingService } from 'src/app/marking.service';
 
@@ -9,15 +9,21 @@ import { MarkingService } from 'src/app/marking.service';
   providers: [MarkingService]
 })
 export class BoardgameComponent implements OnInit {
-  @ViewChild(cell)
 
   constructor(private markingService: MarkingService) { }
 
   ngOnInit(): void {
   }
 
-  markBlock() {
-    let id = Ele
-    this.markingService.addNewElement(id);
+  markBlock(event: MouseEvent) {
+    let id = event.srcElement.id;
+
+    if(event.srcElement.innerHTML === 'X' || event.srcElement.innerHTML === 'O')
+      this.markingService.removeElement(id);
+    else{
+      this.markingService.addNewElement(id);
+    }
+
+    console.log(event.srcElement);
   }
 }
