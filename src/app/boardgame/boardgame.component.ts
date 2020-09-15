@@ -15,15 +15,16 @@ export class BoardgameComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  markBlock(event: MouseEvent) {
+  markBlock(event: any) {
+    console.log(event.srcElement);
     let id = event.srcElement.id;
 
-    if(event.srcElement.innerHTML === 'X' || event.srcElement.innerHTML === 'O')
+    if(event.innerHTML == 'X' || event.innerHTML === 'O')
       this.markingService.removeElement(id);
     else{
       this.markingService.addNewElement(id);
     }
 
-    console.log(event.srcElement);
+    
   }
 }
