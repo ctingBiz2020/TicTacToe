@@ -22,4 +22,7 @@ describe('HeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //I expect new game button to reset the boardgame with no markers on all nine cells
+  
 });

@@ -22,4 +22,6 @@ describe('BoardgameComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  //it should create a mark X in cell one
 });

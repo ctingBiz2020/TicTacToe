@@ -1,5 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
+import { BoardgameComponent } from './boardgame/boardgame.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -22,10 +24,15 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('tictactoe');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('tictactoe app is running!');
+  it('should create the header component', () => {
+    const fixture = TestBed.createComponent(HeaderComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
+  });
+
+  it('should create the header component', () => {
+    const fixture = TestBed.createComponent(BoardgameComponent);
+    const app = fixture.componentInstance;
+    expect(app).toBeTruthy();
   });
 });
