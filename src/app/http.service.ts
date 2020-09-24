@@ -21,7 +21,8 @@ export class HttpService {
     
     console.log(dataObject);
 
-    const result = await this.http.post(this.localURL, dataObject).toPromise();
-    console.log(result);
+    const result = await this.http.post<number>(this.localURL, dataObject);
+
+    return result;
   }
 }

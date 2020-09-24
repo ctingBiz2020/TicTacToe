@@ -17,4 +17,9 @@ export class MarkingService {
     document.getElementById(selectedId).removeChild(removeMarker);
   }
 
+  addNewAIElement(selectedID: string){
+    let oMarker = document.createTextNode('O');
+    document.getElementById(selectedID).appendChild(oMarker);
+  }
+
 }

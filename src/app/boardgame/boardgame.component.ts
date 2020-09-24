@@ -73,7 +73,46 @@ export class BoardgameComponent implements OnInit {
     find = this.space.indexOf(placement, 0)
     this.space.splice(find,1);
 
-    this.httpService.getComputerMove(placement, this.space);
+    let ai = this.httpService.getComputerMove(placement, this.space);
+
+    switch(ai){
+      case 1: { 
+        id = "cell_one";
+        break; 
+      }
+      case 2: { 
+        placement = 2;
+        break; 
+      }
+      case "cell_three": { 
+        placement = 3;
+        break; 
+      }
+      case "cell_four": { 
+        placement = 4;
+        break; 
+      }
+      case "cell_five": { 
+        placement = 5;
+        break; 
+      }
+      case "cell_six": { 
+        placement = 6;
+        break; 
+      }
+      case "cell_seven": { 
+        placement = 7;
+        break; 
+      }
+      case "cell_eight": { 
+        placement = 8;
+        break; 
+      }
+      case "cell_nine": { 
+        placement = 9;
+        break; 
+      } 
+    }
     
   }
 }
