@@ -19,7 +19,7 @@ export class BoardgameComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  markBlock(event: any) {
+  async markBlock(event: any) {
     console.log(event.srcElement);
     let id = event.srcElement.id;
     let placement: number;
@@ -30,7 +30,8 @@ export class BoardgameComponent implements OnInit {
     else{
       this.markingService.addNewElement(id);
     }
-
+    //de couplde switch case and splice
+    //change backend retrun string
     switch(id){
       case "cell_one": { 
         placement = 1;
@@ -73,7 +74,12 @@ export class BoardgameComponent implements OnInit {
     find = this.space.indexOf(placement, 0)
     this.space.splice(find,1);
 
-    let ai = this.httpService.getComputerMove(placement, this.space);
+    if(this.space.length < 5)
+
+    let ai: number;
+    ai = await this.httpService.getComputerMove(placement, this.space);
+
+    console.log(ai);
 
     switch(ai){
       case 1: { 
@@ -81,38 +87,47 @@ export class BoardgameComponent implements OnInit {
         break; 
       }
       case 2: { 
-        placement = 2;
+        id = "cell_two";
         break; 
       }
-      case "cell_three": { 
-        placement = 3;
+      case 3: { 
+        id = "cell_three"
         break; 
       }
-      case "cell_four": { 
-        placement = 4;
+      case 4: { 
+        id = "cell_four"
         break; 
       }
-      case "cell_five": { 
-        placement = 5;
+      case 5: { 
+        id = "cell_five"
         break; 
       }
-      case "cell_six": { 
-        placement = 6;
+      case 6: { 
+        id = "cell_six"
         break; 
       }
-      case "cell_seven": { 
-        placement = 7;
+      case 7: { 
+       id = "cell_seven";
         break; 
       }
-      case "cell_eight": { 
-        placement = 8;
+      case 8: { 
+        id = "cell_eight"
         break; 
       }
-      case "cell_nine": { 
-        placement = 9;
+      case 9: { 
+        id = "cell_nine"
         break; 
+      }
+      default: {
+        console.log("Value did not register");
+        break;
       } 
     }
+
+    find = this.space.indexOf(ai, 0)
+    this.space.splice(find,1);
     
+    this.markingService.addNewAIElement(id);
+
   }
 }
