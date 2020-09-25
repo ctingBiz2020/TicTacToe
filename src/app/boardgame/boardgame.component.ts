@@ -76,7 +76,7 @@ export class BoardgameComponent implements OnInit {
 
     if(this.space.length < 5)
 
-    let ai: number;
+    var ai: number;
     ai = await this.httpService.getComputerMove(placement, this.space);
 
     console.log(ai);
