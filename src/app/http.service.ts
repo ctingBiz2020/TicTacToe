@@ -34,6 +34,7 @@ export class HttpService {
     }
 
     let result = await this.http.post<number>(this.validateURL, stateObject).toPromise();
+    console.log("The result is " + result)
     return result;
   }
 

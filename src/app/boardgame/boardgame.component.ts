@@ -35,15 +35,23 @@ export class BoardgameComponent implements OnInit {
     //de couplde switch case and splice
     //change backend return string
     placement = this.markingService.htmlConvertorFunction(id, this.space);
+    this.player1.push(placement);
 
     if(this.space.length < 5){
       this.win = await this.httpService.validateCondition(this.player1, this.player2);
     }
+    
+    if(this.win == 0){
+      var ai: string;
+      ai = await this.httpService.getComputerMove(placement, this.space);
+      let aiPlacement = this.markingService.htmlConvertorFunction(ai, this.space);
+      this.player2.push(aiPlacement);
+      this.markingService.addNewAIElement(ai);
+    }
 
-    var ai: string;
-    ai = await this.httpService.getComputerMove(placement, this.space);
-    this.markingService.htmlConvertorFunction(ai, this.space);
-    this.markingService.addNewAIElement(ai);
+    if(this.space.length < 4){
+      this.win = await this.httpService.validateCondition(this.player1, this.player2);
+    }
 
   }
 
