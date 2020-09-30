@@ -1,5 +1,4 @@
 import { Component, OnInit} from '@angular/core';
-
 import { MarkingService } from 'src/app/marking.service';
 import { HttpService } from '../http.service';
 
@@ -17,7 +16,9 @@ export class BoardgameComponent implements OnInit {
   win = 0;
 
 
-  constructor(private markingService: MarkingService, private httpService: HttpService) { }
+  constructor(
+    private markingService: MarkingService, 
+    private httpService: HttpService,) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +29,7 @@ export class BoardgameComponent implements OnInit {
     let placement: number;
 
     if(event.srcElement.innerHTML === 'X' || event.srcElement.innerHTML === 'O')
-      this.markingService.removeElement(id);
+      return;
     else{
       this.markingService.addNewElement(id);
     }

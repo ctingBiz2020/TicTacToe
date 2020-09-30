@@ -11,12 +11,6 @@ export class MarkingService {
     document.getElementById(selectedId).appendChild(addMarker);
   }
 
-  // Remove Element
-  removeElement(selectedId: string){
-    let removeMarker = document.createTextNode('X');
-    document.getElementById(selectedId).removeChild(removeMarker);
-  }
-
   // Create a new AI element
   addNewAIElement(selectedID: string){
     let oMarker = document.createTextNode('O');

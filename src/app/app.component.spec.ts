@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BoardgameComponent } from './boardgame/boardgame.component';
@@ -6,6 +7,7 @@ import { BoardgameComponent } from './boardgame/boardgame.component';
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [HttpClientTestingModule],
       declarations: [
         AppComponent
       ],
