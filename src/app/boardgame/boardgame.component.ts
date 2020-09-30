@@ -23,12 +23,12 @@ export class BoardgameComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  async markBlock(event: any) {
-    console.log(event.srcElement);
-    let id = event.srcElement.id;
+  async markBlock($event: any) {
+    console.log($event.srcElement);
+    let id = $event.srcElement.id;
     let placement: number;
 
-    if(event.srcElement.innerHTML === 'X' || event.srcElement.innerHTML === 'O')
+    if($event.srcElement.innerHTML === 'X' || $event.srcElement.innerHTML === 'O')
       return;
     else{
       this.markingService.addNewElement(id);
