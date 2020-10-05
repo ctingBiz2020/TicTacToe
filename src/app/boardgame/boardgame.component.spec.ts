@@ -66,6 +66,16 @@ describe('BoardgameComponent', () => {
       expect(component.win).toBe(0);
     });
   })
+
+  it('should return nothing if there is a marker at that cell', async () =>{
+    
+    const cell = fixture.debugElement.query(By.css('#cell_one')).nativeElement;
+    cell.innerText = 'X';
+    component.space = [2,3,4,5,6,7,8,9];
+    
+    expect(component.markBlock(cell)).toBeTruthy();
+    
+  })
   
 
 });

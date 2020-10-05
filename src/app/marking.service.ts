@@ -17,6 +17,14 @@ export class MarkingService {
     document.getElementById(selectedID).appendChild(oMarker);
   }
 
+  // Remove marker on the board
+  removeElement(){
+    let cell = document.getElementsByClassName("content");
+    for(let i = 0; i < 9; i++){
+      cell[i].innerHTML = "";
+    }
+  }
+
   // Convert string id to integer for placement and removal of available space
   htmlConvertorFunction(selectedID: string, space: number[]){
     let placement: number;

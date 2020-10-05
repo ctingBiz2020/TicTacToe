@@ -28,11 +28,13 @@ export class BoardgameComponent implements OnInit {
     let id = $event.srcElement.id;
     let placement: number;
 
-    if($event.srcElement.innerHTML === 'X' || $event.srcElement.innerHTML === 'O')
-      return;
-    else{
-      this.markingService.addNewElement(id);
+    if($event.srcElement.innerHTML === 'X' || $event.srcElement.innerHTML === 'O'){
+      alert("Please choose another cell!");
+      return null;
     }
+    
+    this.markingService.addNewElement(id);
+    
     //de couplde switch case and splice
     //change backend return string
     placement = this.markingService.htmlConvertorFunction(id, this.space);
@@ -58,5 +60,12 @@ export class BoardgameComponent implements OnInit {
 
   resetBtn(){
     this.win = 0;
+    this.player1 = [];
+    this. player2 = [];
+
+    //Remove all marker on the board.
+    this.markingService.removeElement();
+    this.space = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
   }
 }
