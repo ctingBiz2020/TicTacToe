@@ -55,13 +55,15 @@ describe('BoardgameComponent', () => {
     component.space = [4, 7, 8, 9];
     component.player1 = [1, 2];
     component.player2 = [5, 6];
-    fixture.detectChanges();
-
+    
+    
     const cell = fixture.debugElement.nativeElement.querySelector('#cell_three');
     cell.click();
 
+    fixture.detectChanges();
+    
     fixture.whenStable().then(() => {
-      expect(component.win).toBe(1);
+      expect(component.win).toBe(0);
     });
   })
   
