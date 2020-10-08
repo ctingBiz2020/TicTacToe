@@ -15,7 +15,6 @@ export class BoardgameComponent implements OnInit {
   player2: number[] = [];
   win = 0;
 
-
   constructor(
     private markingService: MarkingService, 
     private httpService: HttpService,) { }
@@ -24,7 +23,8 @@ export class BoardgameComponent implements OnInit {
   }
 
   async markBlock($event: any) {
-    console.log($event.srcElement);
+    console.log("User clicked on " + $event.srcElement.id);
+    
     let id = $event.srcElement.id;
     let placement: number;
 
@@ -34,9 +34,7 @@ export class BoardgameComponent implements OnInit {
     }
     
     this.markingService.addNewElement(id);
-    
-    //de couplde switch case and splice
-    //change backend return string
+
     placement = this.markingService.htmlConvertorFunction(id, this.space);
     this.player1.push(placement);
 
