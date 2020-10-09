@@ -5,7 +5,7 @@
     padding: 10px;
     background-color: purple;
     border-radius: 25px;
-    border: 2px solid orange;
+    box-shadow: 0 0 20px orange;
 }
 .row{
     margin: auto;
@@ -15,8 +15,8 @@
 .cell{
     position: relative;
     width: 25%;
-    border: 2px solid black;
     border-radius: 25px;
+    box-shadow: 0 0 10px black;
     margin: auto;
 
 }
@@ -36,10 +36,6 @@
     line-height: 100%;
     z-index: 1;
     color: white;
-}
-
-.content + .content {
-    margin-left: 1em;
 }
 
 .content::after {

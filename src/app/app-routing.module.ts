@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BoardgameComponent } from './boardgame/boardgame.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [{
@@ -8,8 +9,11 @@ const routes: Routes = [{
   redirectTo: 'home',
   pathMatch: 'full'
 }, {
-  path: 'home',
+  path: 'computer',
   component: BoardgameComponent
+}, {
+  path: 'home',
+  component: LoginComponent
 }];
 
 @NgModule({

@@ -1,1 +1,23 @@
-<p>login works!</p>
+<div class="container">
+    <div class="box">
+        
+        <form>
+            <p>Choose your rival</p>
+            <input type="radio" name="player" id="computer" [(ngModel)]="select" [value]="computer">
+            <label for="computer">AI</label><br>
+            <input type="radio" name="player" id="human" [(ngModel)]="select" [value]="human">
+            <label for="human">Human</label><br>
+        
+            <div>
+                <p>Choose you difficulty</p>
+                <input type="radio" name="setting" id="easy">
+                <label for="easy">Easy</label><br>
+                <input type="radio" name="setting" id="hard">
+                <label for="hard">Hard</label><br>
+            </div>
+        
+            <div class="submit" (click)="startGame()">Let's play!</div>
+        </form>
+
+    </div>
+</div>
