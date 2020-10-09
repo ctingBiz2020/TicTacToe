@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  let select;
+  //let select;
 
   constructor(
     private route: Router
@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
   }
 
   startGame(){
-    if(this.select === "computer") this.route.navigateByUrl('/computer')
-    else 
+    this.route.navigateByUrl('/computer')
+  
   }
 
 }
