@@ -29,3 +29,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Notes
 Used the follow website to create an AWS pipeline for the UI
 https://medium.com/faun/ci-cd-with-angular-8-github-and-aws-codepipeline-b83d2b01e594
+
+As of 10/26/2020; Need to further develope the login component
+1. Create HTTP request for Human Controller
+2. Create Hard AI using MaxMin alogrithm
+3. Setup backend onto the AWS 
+4. Implement AWS SQS into the project
